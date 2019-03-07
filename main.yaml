@@ -1,0 +1,11 @@
+---
+- name: Configuration management
+  hosts: my_remote_hosts
+  tasks:
+  # Assign a sudo rule to the user
+  - name: Assign a sudo rule to the user
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^sunil\s'
+      line: 'sunil ALL=(ALL) NOPASSWD: ALL'
